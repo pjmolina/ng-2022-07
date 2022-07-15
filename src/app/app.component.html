@@ -1,8 +1,20 @@
 <div>
   <h1 class="principal">{{ title }}</h1>
-  Hola
+  Hola {{ nombreSeleccionado }}
 
-  <app-user name="Ana" surname="Lopez"></app-user>
-  <app-user name="Pablo" surname="Albeniz"></app-user>
-  <app-user name="Maria" surname="Moreno"></app-user>
+  <app-user
+    name="Ana"
+    surname="Lopez"
+    (userSelected)="usuarioSeleccionado($event)"
+  ></app-user>
+  <app-user
+    name="Pablo"
+    surname="Albeniz"
+    (userSelected)="usuarioSeleccionado($event)"
+  ></app-user>
+  <app-user
+    name="Maria"
+    surname="Moreno"
+    (userSelected)="usuarioSeleccionado($event)"
+  ></app-user>
 </div>
