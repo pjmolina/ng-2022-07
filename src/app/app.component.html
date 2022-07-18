@@ -2,19 +2,13 @@
   <h1 class="principal">{{ title }}</h1>
   Hola {{ nombreSeleccionado }}
 
-  <app-user
-    name="Ana"
-    surname="Lopez"
-    (userSelected)="usuarioSeleccionado($event)"
-  ></app-user>
-  <app-user
-    name="Pablo"
-    surname="Albeniz"
-    (userSelected)="usuarioSeleccionado($event)"
-  ></app-user>
-  <app-user
-    name="Maria"
-    surname="Moreno"
-    (userSelected)="usuarioSeleccionado($event)"
-  ></app-user>
+  <hr />
+  <div class="container">
+    <app-user
+      *ngFor="let u of usuarios"
+      name="{{ u.name }}"
+      surname="{{ u.surname }}"
+      (userSelected)="usuarioSeleccionado($event)"
+    ></app-user>
+  </div>
 </div>
