@@ -16,8 +16,10 @@ import { UserData } from './userdata';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit, OnDestroy, OnChanges {
-  @Input() name = '';
-  @Input() surname = '';
+  @Input() user: UserData = {
+    name: '',
+    surname: '',
+  };
   @Output() userSelected = new EventEmitter<UserData>();
 
   constructor() {
@@ -36,11 +38,11 @@ export class UserComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   pulsado(): void {
-    console.log('Boton pulsado ', this.name);
+    console.log('Boton pulsado ', this.user.name);
 
     this.userSelected.emit({
-      name: this.name,
-      surname: this.surname,
+      name: this.user.name,
+      surname: this.user.surname,
     });
   }
 }
