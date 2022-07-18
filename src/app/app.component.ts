@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { UserData } from './user/userdata';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ export class AppComponent {
   title = 'angular0';
   nombreSeleccionado?: string;
 
-  usuarioSeleccionado(nuevoNombre: string): void {
-    this.nombreSeleccionado = nuevoNombre;
+  usuarioSeleccionado(user: UserData): void {
+    // this.nombreSeleccionado = user.name + ' ' + user.surname;
+    this.nombreSeleccionado = `${user.name} ${user.surname}`;
   }
 }

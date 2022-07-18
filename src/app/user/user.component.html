@@ -7,5 +7,7 @@
     <label>Apellido:</label>
     <span>{{ surname }}</span>
   </div>
+  <div *ngIf="name === 'Pablo'" class="llamativo">**</div>
+  <div *ngIf="name !== 'Pablo'" class="no-pablo">++</div>
   <button (click)="pulsado()">Seleccionar</button>
 </div>

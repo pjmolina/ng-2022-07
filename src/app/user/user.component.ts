@@ -1,18 +1,46 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
+import { UserData } from './userdata';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
 })
-export class UserComponent {
+export class UserComponent implements OnInit, OnDestroy, OnChanges {
   @Input() name = '';
   @Input() surname = '';
-  @Output() userSelected = new EventEmitter<string>();
+  @Output() userSelected = new EventEmitter<UserData>();
+
+  constructor() {
+    console.log('Componente construyendose...');
+  }
+
+  ngOnInit(): void {
+    console.log('Componente inicializandose...');
+  }
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('Componente con cambios:', changes);
+  }
+
+  ngOnDestroy(): void {
+    console.log('Componente destruye...');
+  }
 
   pulsado(): void {
     console.log('Boton pulsado ', this.name);
 
-    this.userSelected.emit(this.name);
+    this.userSelected.emit({
+      name: this.name,
+      surname: this.surname,
+    });
   }
 }
