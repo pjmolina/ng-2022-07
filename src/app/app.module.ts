@@ -8,7 +8,10 @@ import { UserComponent } from './user/user.component';
 @NgModule({
   declarations: [AppComponent, UserComponent],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [
+    // LoggerService    // bypass
+    // { provide: LoggerService, useClass: LoggerV2Service },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

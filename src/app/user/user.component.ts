@@ -8,12 +8,17 @@ import {
   Output,
   SimpleChanges,
 } from '@angular/core';
+import { LoggerService } from '../services/logger.service';
 import { UserData } from './userdata';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss'],
+  providers: [
+    // LoggerService, // bypass
+    //{ provide: LoggerService, useClass: LoggerV2Service },
+  ],
 })
 export class UserComponent implements OnInit, OnDestroy, OnChanges {
   @Input() user: UserData = {
@@ -22,23 +27,23 @@ export class UserComponent implements OnInit, OnDestroy, OnChanges {
   };
   @Output() userSelected = new EventEmitter<UserData>();
 
-  constructor() {
-    console.log('Componente construyendose...');
+  constructor(private logger: LoggerService) {
+    logger.log('Componente construyendose...');
   }
 
   ngOnInit(): void {
-    console.log('Componente inicializandose...');
+    this.logger.log('Componente inicializandose...');
   }
   ngOnChanges(changes: SimpleChanges): void {
-    console.log('Componente con cambios:', changes);
+    this.logger.log('Componente con cambios:' + JSON.stringify(changes));
   }
 
   ngOnDestroy(): void {
-    console.log('Componente destruye...');
+    this.logger.log('Componente destruye...');
   }
 
   pulsado(): void {
-    console.log('Boton pulsado ', this.user.name);
+    this.logger.log('Boton pulsado ' + this.user.name);
 
     this.userSelected.emit({
       name: this.user.name,
