@@ -7,7 +7,7 @@
     <app-user
       *ngFor="let u of usuarios"
       name="{{ u.name }}"
-      surname="{{ u.surname }}"
+      [surname]="u.surname"
       (userSelected)="usuarioSeleccionado($event)"
     ></app-user>
   </div>
