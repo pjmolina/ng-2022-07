@@ -7,7 +7,17 @@
     <label>Apellido:</label>
     <span>{{ surname }}</span>
   </div>
-  <div *ngIf="name === 'Pablo'" class="llamativo">**</div>
+  <!-- Repitiendo condicion
+     <div *ngIf="name === 'Pablo'" class="llamativo">**</div>
   <div *ngIf="name !== 'Pablo'" class="no-pablo">++</div>
+  -->
+
+  <!-- Utilizando el keyword else -->
+  <div *ngIf="name === 'Pablo'; else noPabloTemplate" class="llamativo">**</div>
+
+  <ng-template #noPabloTemplate>
+    <div class="no-pablo">++</div>
+  </ng-template>
+
   <button (click)="pulsado()">Seleccionar</button>
 </div>
