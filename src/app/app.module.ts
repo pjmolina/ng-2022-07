@@ -4,10 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
+import { PersonSearchPipe } from './pipes/person-search.pipe';
 import { UserComponent } from './user/user.component';
+import { UserSortPipe } from './pipes/user-sort.pipe';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, CurrencyPipe],
+  declarations: [AppComponent, UserComponent, CurrencyPipe, PersonSearchPipe, UserSortPipe],
   imports: [BrowserModule, FormsModule],
   providers: [
     // LoggerService    // bypass

@@ -9,6 +9,7 @@ import { UserData } from './user/userdata';
 export class AppComponent {
   title = 'angular0';
   nombreSeleccionado?: string;
+  searchText = '';
 
   usuarios: UserData[] = [
     { name: 'Maria', surname: 'Garcia' },
