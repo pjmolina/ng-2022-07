@@ -21,6 +21,25 @@ import { UserData } from './userdata';
   ],
 })
 export class UserComponent implements OnInit, OnDestroy, OnChanges {
+  // age: number = 0;
+
+  // Ejemplo de setter/getter : age
+  private _age: number = 0;
+
+  set age(v: number) {
+    if (v !== this._age) {
+      this._age = v;
+      console.log('escritura', v);
+      // this.ageChanged.emit();
+    } else {
+      // nada
+    }
+  }
+  get age(): number {
+    console.log('lectura', this._age);
+    return this._age;
+  }
+
   @Input() user: UserData = {
     name: '',
     surname: '',
