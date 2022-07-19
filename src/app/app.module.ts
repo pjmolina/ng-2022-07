@@ -7,9 +7,10 @@ import { CurrencyPipe } from './pipes/currency.pipe';
 import { PersonSearchPipe } from './pipes/person-search.pipe';
 import { UserComponent } from './user/user.component';
 import { UserSortPipe } from './pipes/user-sort.pipe';
+import { HighlightDirective } from './directives/highlight.directive';
 
 @NgModule({
-  declarations: [AppComponent, UserComponent, CurrencyPipe, PersonSearchPipe, UserSortPipe],
+  declarations: [AppComponent, UserComponent, CurrencyPipe, PersonSearchPipe, UserSortPipe, HighlightDirective],
   imports: [BrowserModule, FormsModule],
   providers: [
     // LoggerService    // bypass
