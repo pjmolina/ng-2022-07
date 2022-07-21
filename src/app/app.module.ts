@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -20,7 +21,7 @@ import { UserComponent } from './user/user.component';
     HighlightDirective,
     PizzaListComponent,
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
     // LoggerService    // bypass
     // { provide: LoggerService, useClass: LoggerV2Service },

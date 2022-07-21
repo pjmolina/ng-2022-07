@@ -13,6 +13,20 @@ export class PizzaListComponent implements OnInit {
   constructor(private pizzaService: PizzaService) {}
 
   ngOnInit(): void {
-    this.pizzas = this.pizzaService.getPizzas();
+    // API Sincrono que devuelve un array de pizza
+    // this.pizzas = this.pizzaService.getPizzas();
+
+    // Asincronia
+    this.pizzaService.getPizzas().subscribe({
+      next: (data) => {
+        this.pizzas = data;
+      },
+      error: (err) => {
+        console.error(err);
+      },
+      complete: () => {
+        console.log('Se ha completado el observable');
+      },
+    });
   }
 }
