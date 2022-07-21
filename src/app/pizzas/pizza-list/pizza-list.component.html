@@ -1,15 +1,28 @@
-<div class="list-pizzas">
+<div class="list-pizzas" *ngIf="!loading; else spinner">
   <h1>Listado de pizzas</h1>
-  <div class="pizza-container">
+  <div class="pizza-container" *ngIf="!error; else errorDeRed">
     <div class="pizza" *ngFor="let pizza of pizzas">
       <div class="name">{{ pizza.name }}</div>
       <div class="price">{{ pizza.price | currency: pizza.currency }}</div>
       <div [class.vegan]="pizza.vegan" [class.carnivora]="!pizza.vegan">
         {{ pizza.vegan ? "Vegana" : "Carnivora" }}
       </div>
+      <div class="photo">
+        <img [src]="pizza.photoUrl" />
+      </div>
     </div>
   </div>
 </div>
+
+<ng-template #spinner>
+  Cargando...
+  <img class="spinner" src="/assets/img/spinner.gif" />
+</ng-template>
+
+<ng-template #errorDeRed>
+  <strong>{{ error }}</strong>
+  <strong>Lo siento, no hay conectividad. Intentalo más tarde.</strong>
+</ng-template>
 
 <!-- interfaz pizza
                 ingrediente[]

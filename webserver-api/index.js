@@ -22,20 +22,24 @@ app.get('/pizzas', (req, res) => {
       name: 'Margarita',
       price: 8.5,
       currency: 'EUR',
-      vegan: false
+      vegan: false,
+      photoUrl: '/margarita.webp'
     },
     {
       name: 'Con piña',
       price: 0.0004,
       currency: 'BTC',
-      vegan: true
+      vegan: true,
+      photoUrl: '/piña.jpg'
+
     },
     {
       name: 'con jalapeños',
       price: 0.0004,
       currency: 'BTC',
       noGluten: true,
-      vegan: true
+      vegan: true,
+      photoUrl: 'https://www.recetaspizzas.com/base/stock/Recipe/88-image/88-image_web.jpg'
     }
   ])
 })

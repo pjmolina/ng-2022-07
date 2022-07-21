@@ -4,4 +4,5 @@ export interface Pizza {
   price: number;
   currency: string;
   vegan: boolean;
+  photoUrl: string;
 }
