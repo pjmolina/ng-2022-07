@@ -1,0 +1,16 @@
+<div class="list-pizzas">
+  <h1>Listado de pizzas</h1>
+  <div class="pizza-container">
+    <div class="pizza" *ngFor="let pizza of pizzas">
+      <div class="name">{{ pizza.name }}</div>
+      <div class="price">{{ pizza.price | currency: pizza.currency }}</div>
+      <div [class.vegan]="pizza.vegan" [class.carnivora]="!pizza.vegan">
+        {{ pizza.vegan ? "Vegana" : "Carnivora" }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- interfaz pizza
+                ingrediente[]
+-->
