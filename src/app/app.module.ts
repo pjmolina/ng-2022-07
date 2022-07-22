@@ -11,6 +11,7 @@ import { PersonSearchPipe } from './pipes/person-search.pipe';
 import { UserSortPipe } from './pipes/user-sort.pipe';
 import { PizzaListComponent } from './pizzas/pizza-list/pizza-list.component';
 import { UserComponent } from './user/user.component';
+import { ChatClientComponent } from './chat/chat-client/chat-client.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { UserComponent } from './user/user.component';
     HighlightDirective,
     PizzaListComponent,
     BingoClientComponent,
+    ChatClientComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule],
   providers: [
