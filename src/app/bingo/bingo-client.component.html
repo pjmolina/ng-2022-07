@@ -1,0 +1,15 @@
+<div class="bingo-client">
+  <button *ngIf="!dentro" (click)="entrar()">Entrar</button>
+  <button *ngIf="dentro" (click)="salir()">Salir</button>
+  ------
+  <button (click)="parar()">Parar bingo!!!</button>
+
+  <div [class.jugando]="dentro">
+    <ul>
+      <li *ngFor="let n of ultimosNumeros">
+        {{ n.number }} {{ n.ts | date }} {{ n.gameId }}
+      </li>
+    </ul>
+  </div>
+  {{ message }}
+</div>
