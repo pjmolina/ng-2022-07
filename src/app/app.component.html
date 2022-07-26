@@ -3,9 +3,9 @@
 </div>
 <nav>
   <a [routerLink]="['/inicio']">Inicio</a> |
-  <a [routerLink]="['/bingo']">Bingo</a> |
-  <a [routerLink]="['/chat']">Chat</a> |
-  <a [routerLink]="['/usuarios']">Usuarios</a> |
+  <a *ngIf="isAdmin" [routerLink]="['/bingo']">Bingo</a> |
+  <a *ngIf="isAdmin" [routerLink]="['/chat']">Chat</a> |
+  <a *ngIf="isAdmin" [routerLink]="['/usuarios']">Usuarios</a> |
   <a [routerLink]="['/pizzas']">Pizzas</a> |
   <a [routerLink]="['/pizzas/Margarita']">Pizza Margarita</a> |
   <a [routerLink]="['/no-existe']">No lleva a ningun sitio</a>
