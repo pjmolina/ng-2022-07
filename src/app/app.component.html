@@ -1,46 +1,15 @@
-<!-- <div>
+<div>
   <h1 class="principal" appHighlight>{{ title }}</h1>
-  Hola {{ nombreSeleccionado }}
-
-  <hr />
-  <div class="search">
-    <input
-      type="text"
-      [(ngModel)]="searchText"
-      placeholder="escribe para buscar"
-    />
-  </div>
-  <div class="container">
-    <app-user
-      *ngFor="let u of usuarios | personSearch: searchText | userSort"
-      [user]="u"
-      (userSelected)="usuarioSeleccionado($event)"
-    ></app-user>
-  </div>
-
-  <span> Importe {{ 20345.689 | currency: "USD" }} </span>
 </div>
-
+<nav>
+  <a [routerLink]="['/inicio']">Inicio</a> |
+  <a [routerLink]="['/bingo']">Bingo</a> |
+  <a [routerLink]="['/chat']">Chat</a> |
+  <a [routerLink]="['/usuarios']">Usuarios</a> |
+  <a [routerLink]="['/pizzas']">Pizzas</a> |
+  <a [routerLink]="['/pizzas/Margarita']">Pizza Margarita</a> |
+  <a [routerLink]="['/no-existe']">No lleva a ningun sitio</a>
+</nav>
 <div>
-  <app-pizza-list></app-pizza-list>
-</div>
-
-<div>
-  <h1>Bingo</h1>
-  <div class="cols4">
-    <app-bingo-client></app-bingo-client>
-    <app-bingo-client></app-bingo-client>
-    <app-bingo-client></app-bingo-client>
-    <app-bingo-client></app-bingo-client>
-  </div>
-</div> -->
-
-<div>
-  <h1>Chat</h1>
-  <div class="cols4">
-    <app-chat-client></app-chat-client>
-    <app-chat-client></app-chat-client>
-    <app-chat-client></app-chat-client>
-    <app-chat-client></app-chat-client>
-  </div>
+  <router-outlet></router-outlet>
 </div>

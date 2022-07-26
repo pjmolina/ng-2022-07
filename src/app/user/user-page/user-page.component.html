@@ -1,0 +1,19 @@
+Hola {{ nombreSeleccionado }}
+
+<hr />
+<div class="search">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="escribe para buscar"
+  />
+</div>
+<div class="container">
+  <app-user
+    *ngFor="let u of usuarios | personSearch: searchText | userSort"
+    [user]="u"
+    (userSelected)="usuarioSeleccionado($event)"
+  ></app-user>
+</div>
+
+<span> Importe {{ 20345.689 | currency: "USD" }} </span>

@@ -22,6 +22,17 @@ export class PizzaService {
         )
       );
   }
+  getPizzaByName(name: string): Observable<Pizza> {
+    return this.getPizzas().pipe(
+      map((pizzas) => {
+        const pizza = pizzas.find((p) => p.name === name);
+        if (!pizza) {
+          throw new Error('No encontre pizza con nombre ' + name);
+        }
+        return pizza;
+      })
+    );
+  }
 }
 
 const incrementaPrecio = (pizza: Pizza): Pizza => {

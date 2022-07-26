@@ -1,0 +1,21 @@
+<div class="pizza-detail" *ngIf="pizza; else noPizza">
+  <div class="name">{{ pizza.name }}</div>
+  <div class="price">{{ pizza.price | currency: pizza.currency }}</div>
+  <div [class.vegan]="pizza.vegan" [class.carnivora]="!pizza.vegan">
+    {{ pizza.vegan ? "Vegana" : "Carnivora" }}
+  </div>
+  <div class="photo">
+    <img [src]="pizza.photoUrl" />
+  </div>
+
+  <br />
+  <button (click)="volver()">Volver</button>
+  <br />
+  <br />
+
+  <a [routerLink]="['/pizzas']">Volver</a>
+</div>
+
+<div class="error" *ngIf="error">{{ error }}</div>
+
+<ng-template #noPizza> No hay pizza que mostrar </ng-template>
