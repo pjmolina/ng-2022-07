@@ -6,8 +6,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { routes } from './app.routing';
-import { BingoClientComponent } from './bingo/bingo-client.component';
-import { BingoPageComponent } from './bingo/bingo-page/bingo-page.component';
 import { ChatClientComponent } from './chat/chat-client/chat-client.component';
 import { ChatPageComponent } from './chat/chat-page/chat-page.component';
 import { HighlightDirective } from './directives/highlight.directive';
@@ -16,9 +14,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CurrencyPipe } from './pipes/currency.pipe';
 import { PersonSearchPipe } from './pipes/person-search.pipe';
 import { UserSortPipe } from './pipes/user-sort.pipe';
-import { PizzaDetailComponent } from './pizzas/pizza-detail/pizza-detail.component';
-import { PizzaListComponent } from './pizzas/pizza-list/pizza-list.component';
-import { PizzaPageComponent } from './pizzas/pizza-page/pizza-page.component';
 import { UserPageComponent } from './user/user-page/user-page.component';
 import { UserComponent } from './user/user.component';
 
@@ -30,16 +25,11 @@ import { UserComponent } from './user/user.component';
     PersonSearchPipe,
     UserSortPipe,
     HighlightDirective,
-    PizzaListComponent,
-    BingoClientComponent,
     ChatClientComponent,
     InicioComponent,
-    BingoPageComponent,
     ChatPageComponent,
     UserPageComponent,
     NotFoundComponent,
-    PizzaPageComponent,
-    PizzaDetailComponent,
   ],
   imports: [
     BrowserModule,
