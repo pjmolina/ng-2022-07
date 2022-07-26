@@ -14,7 +14,7 @@ export interface ChatMessage {
 export class ChatService {
   mensajes: ChatMessage[] = [];
 
-  chat$!: Observable<ChatMessage>;
+  chat$: Observable<ChatMessage>;
 
   private fuente = new Subject<ChatMessage>();
 
