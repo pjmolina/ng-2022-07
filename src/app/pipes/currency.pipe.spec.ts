@@ -41,10 +41,22 @@ describe('CurrencyPipe', () => {
       const sut = new CurrencyPipe();
       expect(sut.transform(-1230.459, 'USD')).toBe('$- 1,230.46');
     });
+    it('should return "$ -" when passing null data', () => {
+      const sut = new CurrencyPipe();
+      expect(sut.transform(null, 'USD')).toBe('$ -');
+    });
   });
 
   it('should return "1230.459 YEN" for input 1230.459 and currency is unknown', () => {
+    // AAA
+
+    // Arrange
     const sut = new CurrencyPipe();
-    expect(sut.transform(1230.459, 'YEN')).toBe('1230.459 YEN');
+
+    // Act
+    const res = sut.transform(1230.459, 'YEN');
+
+    // Assert
+    expect(res).toBe('1230.459 YEN');
   });
 });

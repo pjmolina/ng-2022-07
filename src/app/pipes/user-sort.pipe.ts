@@ -5,7 +5,10 @@ import { UserData } from '../user/userdata';
   name: 'userSort',
 })
 export class UserSortPipe implements PipeTransform {
-  transform(users: UserData[]): UserData[] {
+  transform(users: UserData[] | null | undefined): UserData[] {
+    if (!users) {
+      return [];
+    }
     return users.sort((a: UserData, b: UserData) => {
       const fa = `${a.name} ${a.surname}`;
       const fb = `${b.name} ${b.surname}`;

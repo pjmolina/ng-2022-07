@@ -2,15 +2,14 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PizzaListComponent } from './pizza-list.component';
 
-describe('PizzaListComponent', () => {
+xdescribe('PizzaListComponent', () => {
   let component: PizzaListComponent;
   let fixture: ComponentFixture<PizzaListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PizzaListComponent ]
-    })
-    .compileComponents();
+      declarations: [PizzaListComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(PizzaListComponent);
     component = fixture.componentInstance;
